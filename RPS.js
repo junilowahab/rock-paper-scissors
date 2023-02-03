@@ -36,9 +36,9 @@ function game(){
             computerScore = 0;
             playerScore = 0;
             i = 0;
-        }// else if(computerScore === 2 && playerScore === 2){
-        //     console.log('Game point...');
-        // }
+        } else if(computerScore === 2 && playerScore === 2){
+            console.log('Game point...');
+         }
          
     }
 }
