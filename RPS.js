@@ -48,6 +48,13 @@ function game(){
             i--;
         };
     };
+    
+    //Determine winner
+    if(computerScore > userScore){
+        console.log('Your PC won');
+    }else if(computerScore < userScore){
+        console.log('You won');
+    };
 };
 
 game();
