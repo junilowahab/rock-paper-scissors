@@ -34,6 +34,12 @@ function game(){
             userScore++;
             console.log(`Your score is ${userScore}`);
         };
+
+        //compare choices between user and computer if both chose same thing
+        if((userChoice === 'rock' && computerChoice === 'Rock') || (userChoice === 'paper' && computerChoice === 'Paper') || (userChoice === 'scissors' && computerChoice === 'Scissors')){
+            i--;
+            console.log('Tie! Try again');
+        }
     };
 };
 
