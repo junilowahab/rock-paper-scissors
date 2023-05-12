@@ -19,6 +19,12 @@ function game(){
         userChoice.toLowerCase;
         console.log(userChoice);
 
+        //if user mispells a word
+        if((userChoice !== 'rock') || (userChoice !== 'paper') || (userChoice !== 'scissors')){
+            console.log('Misspelt word, try again');
+            i--;
+        }
+
         //compare choices between user and computer if computer wins
         if((computerChoice === 'Rock' && userChoice === 'scissors') || (computerChoice === 'Paper' && userChoice === 'rock') || (computerChoice === 'Scissors' && userChoice === 'paper')){
             
