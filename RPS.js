@@ -8,12 +8,17 @@ let weaponButtons = document.querySelectorAll('.weaponButtons');
 //array containing the weapons
 const weapons = ['rock', 'paper', 'scissors'];
 
+//called function by clicking button
+weaponButtons.forEach(weaponButton => {
+    weaponButton.addEventListener('click', game())
+});
+
 //function to select random weapon
 function game(){
     let computerScore = 0;
     let userScore = 0;
 
-    for(let i = 0; i < 5; i++){
+
         //select random number
         const randomNumber = Math.floor(Math.random() * weapons.length);
 
@@ -22,7 +27,7 @@ function game(){
         console.log(computerChoice);
 
         //user selects weapon
-        let userChoice = //prompt('Rock, Paper or Scissors?');
+        let userChoice = '';
         userChoice.toLowerCase;
         console.log(userChoice);
 
@@ -47,14 +52,11 @@ function game(){
 
             //compare choices between user and computer if both chose same thing
             if((userChoice === 'rock' && computerChoice === 'rock') || (userChoice === 'paper' && computerChoice === 'paper') || (userChoice === 'scissors' && computerChoice === 'scissors')){
-                i--;
                 console.log('Tie! Try again');
             };
         }else{
             console.log('Misspelt a word, try again');
-            i--;
         };
-    };
 
     //Determine winner
     if(computerScore > userScore){
@@ -63,5 +65,3 @@ function game(){
         console.log('You won');
     };
 };
-
-game();
