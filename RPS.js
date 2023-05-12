@@ -1,3 +1,10 @@
+//linking script to the DOM
+let rock = document.getElementById('rock');
+let paper = document.getElementById('paper');
+let scissors = document.getElementById('scissors');
+
+let weaponButtons = document.querySelectorAll('.weaponButtons');
+
 //array containing the weapons
 const weapons = ['rock', 'paper', 'scissors'];
 
@@ -15,7 +22,7 @@ function game(){
         console.log(computerChoice);
 
         //user selects weapon
-        let userChoice = prompt('Rock, Paper or Scissors?');
+        let userChoice = //prompt('Rock, Paper or Scissors?');
         userChoice.toLowerCase;
         console.log(userChoice);
 
@@ -48,7 +55,7 @@ function game(){
             i--;
         };
     };
-    
+
     //Determine winner
     if(computerScore > userScore){
         console.log('Your PC won');
