@@ -8,30 +8,56 @@ let weaponButtons = document.querySelectorAll('.weaponButtons');
 //array containing the weapons
 const weapons = ['rock', 'paper', 'scissors'];
 
-//called function by clicking button
-weaponButtons.forEach(weaponButton => {
-    weaponButton.addEventListener('click', game())
-});
+//scores of game
+let computerScore = 0;
+let userScore = 0;
+
+game();
 
 //function to select random weapon
 function game(){
-    let computerScore = 0;
-    let userScore = 0;
+
+        let randomNumber;
+        let computerChoice;
+
+        
+        function getComputerChoices(){
+            //select random number
+            randomNumber = Math.floor(Math.random() * weapons.length);
+
+            //computer selects random weapon
+            computerChoice = weapons[randomNumber];
+            console.log(computerChoice);
+        }
 
 
-        //select random number
-        const randomNumber = Math.floor(Math.random() * weapons.length);
+        let userChoice;
 
-        //computer selects random weapon
-        let computerChoice = weapons[randomNumber];
-        console.log(computerChoice);
+        //user selects weapon from button
+        rock.addEventListener('click', () => {
+            userChoice = 'rock';
+            getComputerChoices();
+            gameResults();
+        });
+        
+        paper.addEventListener('click', () => {
+            userChoice = 'paper';
+            getComputerChoices();
+            gameResults()
+        });
+
+        scissors.addEventListener('click', () => {
+            userChoice = 'scissors';
+            getComputerChoices();
+            gameResults()
+        });
+
+        function gameResults(){
 
         //user selects weapon
-        let userChoice = '';
-        userChoice.toLowerCase;
-        console.log(userChoice);
+        console.log(`My choice is ${userChoice}`);
 
-        //if user mispells a word -go to line 47-
+        //if user mispells a word
         if((userChoice === 'rock') || (userChoice === 'paper') || (userChoice === 'scissors')){
                 
             //compare choices between user and computer if computer wins
@@ -53,15 +79,11 @@ function game(){
             //compare choices between user and computer if both chose same thing
             if((userChoice === 'rock' && computerChoice === 'rock') || (userChoice === 'paper' && computerChoice === 'paper') || (userChoice === 'scissors' && computerChoice === 'scissors')){
                 console.log('Tie! Try again');
+                
             };
         }else{
-            console.log('Misspelt a word, try again');
-        };
+            console.log('That is not part of your choices, try again.');
+        }
+        }
 
-    //Determine winner
-    if(computerScore > userScore){
-        console.log('Your PC won');
-    }else if(computerScore < userScore){
-        console.log('You won');
-    };
 };
