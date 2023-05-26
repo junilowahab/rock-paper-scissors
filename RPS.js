@@ -3,6 +3,9 @@ let rock = document.getElementById('rock');
 let paper = document.getElementById('paper');
 let scissors = document.getElementById('scissors');
 
+let yourDisplayedScore = document.getElementById('yourscore');
+let computerDisplayedScore = document.getElementById('compscore');
+
 let weaponButtons = document.querySelectorAll('.weaponButtons');
 
 //array containing the weapons
@@ -65,7 +68,7 @@ function game(){
             
                 //computer gains one point
                 computerScore++;
-                console.log(`Your computers score is ${computerScore}`);
+                computerDisplayedScore.innerText = computerScore;
             };
 
             //compare choices between user and computer if user wins
@@ -73,7 +76,8 @@ function game(){
 
                 //user gains one point
                 userScore++;
-                console.log(`Your score is ${userScore}`);
+                yourDisplayedScore.innerText = userScore;
+
             };
 
             //compare choices between user and computer if both chose same thing

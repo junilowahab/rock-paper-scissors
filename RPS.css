@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.results{
+    margin: 0 auto;
+    height: 300px;
+    width: 600px;
+    border: 2px solid black;
+}
+
+.weapons{
+    margin: 0 auto;
+    margin-top: 20px;
+    height: fit-content;
+    width: fit-content;
+    border: 2px solid black;
+}
+
+.weaponButtons{
+    margin: 10px;
+    height: 50px;
+    width: 100px;
+    font-size: 20px;
+}
+
+.weaponButtons:hover{
+    cursor: pointer;
+}
