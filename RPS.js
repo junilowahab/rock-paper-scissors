@@ -5,6 +5,7 @@ let scissors = document.getElementById('scissors');
 
 let yourDisplayedScore = document.getElementById('yourscore');
 let computerDisplayedScore = document.getElementById('compscore');
+let winnerDiv = document.getElementById('winner');
 
 let weaponButtons = document.querySelectorAll('.weaponButtons');
 
@@ -69,6 +70,13 @@ function game(){
                 //computer gains one point
                 computerScore++;
                 computerDisplayedScore.innerText = computerScore;
+
+                if(computerScore === 5){
+                    console.log('The computer won');
+                    let userWins = document.createElement('div');
+                    userWins.innerText = 'Thee computer won. Refresh to try again.';
+                    winnerDiv.appendChild(userWins);
+                }
             };
 
             //compare choices between user and computer if user wins
@@ -77,6 +85,13 @@ function game(){
                 //user gains one point
                 userScore++;
                 yourDisplayedScore.innerText = userScore;
+                
+                if(userScore === 5){
+                    console.log('YOU WON')
+                    let userWins = document.createElement('div');
+                    userWins.innerText = 'You won!!! Refresh to try again.';
+                    winnerDiv.appendChild(userWins);
+                }
 
             };
 
